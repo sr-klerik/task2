@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 
 class Stack:
 	def __init__(self):
@@ -48,6 +49,6 @@ class GeneratorHTML:
 		while not self.stack.is_empty():
 			self.output_file.write(self.print_closed_teg(self.stack.pop()))
 
-
+#Первый файл входящий, второй исходящий со сгенерированным кодом
 gener = GeneratorHTML("./test.txt","./test2.txt")
 gener.create_html()
