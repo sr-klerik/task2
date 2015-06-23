@@ -23,9 +23,12 @@ class Stack:
 class GeneratorHTML:
 
 	def __init__(self,input_file,output_file):
-		self.input_file=open(input_file,"r")
-		self.output_file=open(output_file,"w")
-		self.stack = Stack()
+		try:
+			self.input_file=open(input_file,"r")
+			self.output_file=open(output_file,"w")
+			self.stack = Stack()
+		except IOError:
+			print "Файл не найден"
 
 	#Метод записи открытого тега по ключевому слову
 	def print_open_teg(self,teg):
